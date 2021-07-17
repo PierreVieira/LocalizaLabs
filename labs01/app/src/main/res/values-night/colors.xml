@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- Customize Colors -->
-    <color name="background">@color/white</color>
-    <color name="background_card">#F4F4F4</color>
-    <color name="text_color">@color/black</color>
+    <color name="background">#232323</color>
+    <color name="background_card">#424242</color>
+    <color name="text_color">@color/white</color>
 </resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movie Review</string>
+    <string name="watch_trailer">Assistir ao trailer</string>
+    <string name="movie_synopsis">The Fast and the Furious é um filme de ação de 2001 dirigido por Rob Cohen e escrito por Gary Scott Thompson e David Ayer. É a primeira parcela da franquia Velozes e Furiosos e é estrelado por Paul Walker, Vin Diesel, Michelle Rodriguez, Jordana Brewster, Rick Yune, Chad Lindberg, Johnny Strong e Ted Levine. No filme…</string>
+    <string name="synopsis_title">Sinópse</string>
+    <string name="creators_title">Criadores</string>
+    <string name="movie_title">Velozes e Furiosos</string>
+    <string name="genres">Gêneros</string>
+</resources>
