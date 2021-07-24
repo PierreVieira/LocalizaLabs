@@ -1,4 +1,4 @@
-package com.example.localizalabs01
+package com.example.mymovieslist
 
 import android.content.res.Configuration
 import android.os.Bundle

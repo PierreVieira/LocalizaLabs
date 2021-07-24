@@ -1,4 +1,4 @@
-package com.example.localizalabs01
+package com.example.mymovieslist
 
 import org.junit.Test
 
