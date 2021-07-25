@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <color name="primary">@color/purple_200</color>
+    <color name="primaryVariant">@color/purple_700</color>
+    <color name="onPrimary">@color/black</color>
+    <color name="secondary">@color/teal_200</color>
+    <color name="secondaryVariant">@color/teal_200</color>
+    <color name="onSecondary">@color/black</color>
 
     <!-- Customize Colors -->
-    <color name="background">#232323</color>
+    <color name="background">#2D2D2D</color>
     <color name="background_card">#424242</color>
-    <color name="text_color">@color/white</color>
+    <color name="text">@color/white</color>
+    <color name="ripple">#40FFFFFF</color>
+
+    <!-- Bottom Navigation Bar -->
+    <color name="navigation_bar_background">@color/background</color>
+    <color name="navigation_bar_item_unselected">#ABABAB</color>
+    <color name="navigation_bar_item_selected">@color/primary</color>
+
 </resources>

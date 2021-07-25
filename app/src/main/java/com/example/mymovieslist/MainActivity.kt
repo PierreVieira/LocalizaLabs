@@ -1,31 +1,28 @@
 package com.example.mymovieslist
 
-import android.content.res.Configuration
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
+import com.example.mymovieslist.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var changeThemeButton: ImageView
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        changeThemeButton = findViewById(R.id.change_theme_icon)
-        setupChangeImageButton()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setupNavigation()
     }
 
-    private fun setupChangeImageButton() {
-        changeThemeButton.setOnClickListener {
-            when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
-                Configuration.UI_MODE_NIGHT_YES -> setThemeColors(AppCompatDelegate.MODE_NIGHT_NO)
-                Configuration.UI_MODE_NIGHT_NO -> setThemeColors(AppCompatDelegate.MODE_NIGHT_YES)
-            }
-        }
+    private fun setupNavigation() {
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        NavigationUI.setupWithNavController(binding.bottomNavigation, navController)
     }
 
-    private fun setThemeColors(mode: Int) = AppCompatDelegate.setDefaultNightMode(mode)
 }

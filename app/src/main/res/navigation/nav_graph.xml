@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.mymovieslist.ui.screens.bottomNavigation.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home"
+        >
+        <action
+            android:id="@+id/action_home_to_movies"
+            app:destination="@id/movies"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/movies"
+        android:name="com.example.mymovieslist.ui.screens.bottomNavigation.MoviesFragment"
+        android:label="fragment_movies"
+        tools:layout="@layout/fragment_movies"
+        >
+        <action
+            android:id="@+id/action_movies_to_search"
+            app:destination="@id/search"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/search"
+        android:name="com.example.mymovieslist.ui.screens.bottomNavigation.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search"
+        >
+        <action
+            android:id="@+id/search_to_top_peoples"
+            app:destination="@id/top_peoples"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/top_peoples"
+        android:name="com.example.mymovieslist.ui.screens.bottomNavigation.TopPeoplesFragment"
+        android:label="fragment_top_peoples"
+        tools:layout="@layout/fragment_top_peoples"
+        >
+        <action
+            android:id="@+id/top_people_to_more"
+            app:destination="@id/more"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/more"
+        android:name="com.example.mymovieslist.ui.screens.bottomNavigation.more.MoreFragment"
+        android:label="fragment_more"
+        tools:layout="@layout/fragment_more"
+        >
+    </fragment>
+
+</navigation>

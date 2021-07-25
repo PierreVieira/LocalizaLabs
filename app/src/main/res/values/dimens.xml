@@ -8,4 +8,17 @@
     <dimen name="text_title_card_margin_bottom">8dp</dimen>
     <dimen name="card_title_size">24sp</dimen>
     <dimen name="movie_title_size">28sp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="fragment_horizontal_margin">16dp</dimen>
+    <dimen name="fragment_vertical_margin">16dp</dimen>
+    <dimen name="plus_margin">16dp</dimen>
+    <dimen name="plus_text_size">16sp</dimen>
+    <dimen name="plus_description_size">12sp</dimen>
+    <dimen name="default_header_height">56dp</dimen>
+    <dimen name="header_margin">16dp</dimen>
+    <dimen name="default_header_title_size">26sp</dimen>
+    <dimen name="shadow_height">5dp</dimen>
+    <dimen name="social_item_title_size">18sp</dimen>
+    <dimen name="social_item_sub_title_size">14sp</dimen>
+    <dimen name="social_media_icon_size">24dp</dimen>
 </resources>
