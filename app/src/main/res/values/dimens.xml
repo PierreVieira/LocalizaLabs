@@ -21,4 +21,17 @@
     <dimen name="social_item_title_size">18sp</dimen>
     <dimen name="social_item_sub_title_size">14sp</dimen>
     <dimen name="social_media_icon_size">24dp</dimen>
+    <dimen name="popup_margin">16dp</dimen>
+    <dimen name="buttom_radius">10dp</dimen>
+    <dimen name="other_options_popup_title_margin">24dp</dimen>
+    <dimen name="cancel_popup_title_bottom_margin">16dp</dimen>
+    <dimen name="title_dialog_size">20sp</dimen>
+    <dimen name="thanks_text_margin">24dp</dimen>
+    <dimen name="text_button_padding_size">4dp</dimen>
+    <dimen name="subtitle_text_size">16sp</dimen>
+    <dimen name="button_margin">24dp</dimen>
+    <dimen name="match_parent_constraint">0dp</dimen>
+    <dimen name="custom_button_height">48dp</dimen>
+    <dimen name="stroke_rounded_width">1dp</dimen>
+    <dimen name="close_text_size">15sp</dimen>
 </resources>

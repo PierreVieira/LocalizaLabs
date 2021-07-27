@@ -17,7 +17,7 @@
     <string name="more">More</string>
     <string name="top_peoples">Top Peoples</string>
     <string name="theme">Theme</string>
-    <string name="theme_system_subtitle">Current theme system</string>
+    <string name="theme_system_subtitle">Automatic</string>
     <string name="simplify_menu_icons_title">Menu icons navigation</string>
     <string name="default_menu_icons_sub_title">Always show description</string>
 
@@ -44,4 +44,8 @@
     <string name="my_instagram_link" translatable="false">https://www.instagram.com/pierrevieira36/</string>
 
     <string name="cant_open_link">Sorry, we can\'t open this link</string>
+    <string name="change_theme_color">Change Theme Color</string>
+    <string name="ok" translatable="false">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="change_theme_color_description">Choose how the application should display colors</string>
 </resources>

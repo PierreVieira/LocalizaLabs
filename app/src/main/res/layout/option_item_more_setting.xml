@@ -46,6 +46,7 @@
 
             <!-- chosen pref -->
             <androidx.appcompat.widget.AppCompatTextView
+                android:textColor="@color/text_subtitle"
                 android:id="@+id/option_item_sub_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

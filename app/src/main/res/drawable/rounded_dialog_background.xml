@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/background_card"/>
+    <corners android:bottomRightRadius="@dimen/buttom_radius"
+        android:bottomLeftRadius="@dimen/buttom_radius"
+        android:topLeftRadius="@dimen/buttom_radius"
+        android:topRightRadius="@dimen/buttom_radius" />
+</shape>

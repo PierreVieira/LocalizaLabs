@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/popup_margin"
+    android:background="@drawable/rounded_dialog_background"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/other_options_popup_title_margin"
+        android:layout_marginBottom="@dimen/cancel_popup_title_bottom_margin"
+        android:gravity="center"
+        android:text="@string/change_theme_color"
+        android:textSize="@dimen/title_dialog_size"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/youtube"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/thanks_text_margin"
+        android:layout_marginRight="@dimen/thanks_text_margin"
+        android:gravity="center"
+        android:padding="@dimen/text_button_padding_size"
+        android:text="@string/change_theme_color_description"
+        android:textColor="@color/text_subtitle"
+        android:textSize="@dimen/subtitle_text_size" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/button_margin">
+
+        <TextView
+            android:id="@+id/no"
+            android:layout_width="@dimen/match_parent_constraint"
+            android:layout_height="@dimen/custom_button_height"
+            android:layout_marginEnd="@dimen/text_button_padding_size"
+            android:background="@drawable/dialog_button_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textSize="@dimen/close_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/yes" />
+
+        <TextView
+            android:id="@+id/yes"
+            android:layout_width="@dimen/match_parent_constraint"
+            android:layout_height="@dimen/custom_button_height"
+            android:layout_marginStart="@dimen/text_button_padding_size"
+            android:background="@drawable/dialog_button_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="@string/ok"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/close_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/no"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

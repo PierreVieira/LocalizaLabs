@@ -49,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
+                android:textColor="@color/text_subtitle"
                 android:textSize="@dimen/social_item_sub_title_size"
                 tools:text="@string/my_github_user" />
         </androidx.appcompat.widget.LinearLayoutCompat>

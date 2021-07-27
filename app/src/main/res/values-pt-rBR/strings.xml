@@ -16,8 +16,11 @@
     <string name="more">Mais</string>
     <string name="top_peoples">Pessoas Populares</string>
     <string name="theme">Tema</string>
-    <string name="theme_system_subtitle">Tema atual do sistema</string>
+    <string name="theme_system_subtitle">Automático</string>
     <string name="simplify_menu_icons_title">Itens de menú de navegação</string>
     <string name="default_menu_icons_sub_title">Sempre mostrar descrições</string>
     <string name="cant_open_link">Desculpe, nós não podemos abrir esse link</string>
+    <string name="change_theme_color">Mudar cor do sistema</string>
+    <string name="cancel">Cancelar</string>
+    <string name="change_theme_color_description">Escolha como o aplicativo deve exibir as cores</string>
 </resources>

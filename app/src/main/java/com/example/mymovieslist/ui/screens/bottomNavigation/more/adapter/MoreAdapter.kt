@@ -8,11 +8,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mymovieslist.R
 import com.example.mymovieslist.enums.MoreItemType
 import com.example.mymovieslist.model.MoreItem
+import com.example.mymovieslist.ui.screens.bottomNavigation.more.SettingsListener
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.MoreBaseViewHolder
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.SettingViewHolder
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.SocialViewHolder
 
-class MoreAdapter(private val context: Context, private val listItems: List<MoreItem>) :
+class MoreAdapter(
+    private val context: Context,
+    private val listItems: List<MoreItem>,
+    private val settingsListener: SettingsListener
+) :
     RecyclerView.Adapter<MoreBaseViewHolder>() {
 
     enum class TypeItems {
@@ -38,7 +43,7 @@ class MoreAdapter(private val context: Context, private val listItems: List<More
         return when (TypeItems.getEnumFromPosition(viewType)) {
             TypeItems.SETTINGS -> {
                 itemView = inflater.inflate(R.layout.option_item_more_setting, parent, false)
-                SettingViewHolder(itemView, context)
+                SettingViewHolder(itemView, context, settingsListener)
             }
             TypeItems.SOCIAL -> {
                 itemView = inflater.inflate(R.layout.option_item_more_social, parent, false)
