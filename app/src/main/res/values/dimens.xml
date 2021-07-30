@@ -34,4 +34,5 @@
     <dimen name="custom_button_height">48dp</dimen>
     <dimen name="stroke_rounded_width">1dp</dimen>
     <dimen name="close_text_size">15sp</dimen>
+    <dimen name="space_between_option_colors">16dp</dimen>
 </resources>

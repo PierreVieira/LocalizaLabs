@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mymovieslist.R
 import com.example.mymovieslist.enums.MoreItemType
-import com.example.mymovieslist.model.MoreItem
+import com.example.mymovieslist.data.moreData.model.MoreItem
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.SettingsListener
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.MoreBaseViewHolder
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.SettingViewHolder
@@ -16,7 +16,7 @@ import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHol
 class MoreAdapter(
     private val context: Context,
     private val listItems: List<MoreItem>,
-    private val settingsListener: SettingsListener
+    private val settingsListener: SettingsListener,
 ) :
     RecyclerView.Adapter<MoreBaseViewHolder>() {
 
@@ -77,5 +77,9 @@ class MoreAdapter(
         MoreItemType.LOGIN -> TypeItems.LOGIN.ordinal
         MoreItemType.MENU -> TypeItems.SETTINGS.ordinal
         MoreItemType.THEME -> TypeItems.SETTINGS.ordinal
+    }
+
+    fun updateChangeThemeLabel() {
+        notifyItemChanged(1)
     }
 }

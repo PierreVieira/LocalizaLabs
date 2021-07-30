@@ -1,4 +1,4 @@
-package com.example.mymovieslist.ui.dialog
+package com.example.mymovieslist.ui.dialogs
 
 import android.app.Dialog
 import android.os.Bundle

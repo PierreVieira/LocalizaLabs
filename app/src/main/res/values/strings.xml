@@ -48,4 +48,7 @@
     <string name="ok" translatable="false">OK</string>
     <string name="cancel">Cancel</string>
     <string name="change_theme_color_description">Choose how the application should display colors</string>
+    <string name="dark">Dark</string>
+    <string name="light">Light</string>
+    <string name="system_color">System Colors</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.mymovieslist.model
+package com.example.mymovieslist.data.moreData.model
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

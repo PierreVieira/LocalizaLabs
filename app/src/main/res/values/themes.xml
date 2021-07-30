@@ -17,4 +17,10 @@
         <item name="android:textColor">@color/text</item>
         <item name="change_theme_icon">@drawable/ic_baseline_nights_stay</item>
     </style>
+
+    <style name="RadioButtonStyle">
+        <item name="buttonTint">@color/primary</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:onClick">onRadioButtonClicked</item>
+    </style>
 </resources>

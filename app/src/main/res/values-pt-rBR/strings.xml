@@ -23,4 +23,7 @@
     <string name="change_theme_color">Mudar cor do sistema</string>
     <string name="cancel">Cancelar</string>
     <string name="change_theme_color_description">Escolha como o aplicativo deve exibir as cores</string>
+    <string name="dark">Escuro</string>
+    <string name="light">Claro</string>
+    <string name="system_color">Cores do Sistema</string>
 </resources>
