@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.mymovieslist.R
+import com.example.mymovieslist.data.MySharedPreferences
+import com.example.mymovieslist.enums.FragmentNavigationType
 
-class TopPeoplesFragment : Fragment() {
+class TopPeoplesFragment : BaseNavigationFragment(FragmentNavigationType.TOP_PEOPLES) {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

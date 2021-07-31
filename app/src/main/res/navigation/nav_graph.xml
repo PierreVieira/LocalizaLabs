@@ -3,54 +3,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/home">
+    app:startDestination="@id/home_screen">
 
     <fragment
-        android:id="@+id/home"
+        android:id="@+id/home_screen"
         android:name="com.example.mymovieslist.ui.screens.bottomNavigation.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home"
         >
         <action
             android:id="@+id/action_home_to_movies"
-            app:destination="@id/movies"/>
+            app:destination="@id/movies_screen"/>
     </fragment>
 
     <fragment
-        android:id="@+id/movies"
+        android:id="@+id/movies_screen"
         android:name="com.example.mymovieslist.ui.screens.bottomNavigation.MoviesFragment"
         android:label="fragment_movies"
         tools:layout="@layout/fragment_movies"
         >
         <action
             android:id="@+id/action_movies_to_search"
-            app:destination="@id/search"/>
+            app:destination="@id/search_screen"/>
     </fragment>
 
     <fragment
-        android:id="@+id/search"
+        android:id="@+id/search_screen"
         android:name="com.example.mymovieslist.ui.screens.bottomNavigation.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search"
         >
         <action
             android:id="@+id/search_to_top_peoples"
-            app:destination="@id/top_peoples"/>
+            app:destination="@id/top_peoples_screen"/>
     </fragment>
 
     <fragment
-        android:id="@+id/top_peoples"
+        android:id="@+id/top_peoples_screen"
         android:name="com.example.mymovieslist.ui.screens.bottomNavigation.TopPeoplesFragment"
         android:label="fragment_top_peoples"
         tools:layout="@layout/fragment_top_peoples"
         >
         <action
             android:id="@+id/top_people_to_more"
-            app:destination="@id/more"/>
+            app:destination="@id/more_screen"/>
     </fragment>
 
     <fragment
-        android:id="@+id/more"
+        android:id="@+id/more_screen"
         android:name="com.example.mymovieslist.ui.screens.bottomNavigation.more.MoreFragment"
         android:label="fragment_more"
         tools:layout="@layout/fragment_more"

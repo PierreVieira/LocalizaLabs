@@ -16,10 +16,16 @@ class ChangeColorThemeDialog : BaseDialog() {
     private var changeTheme: ((themeType: ThemeType) -> Unit)? = null
 
     companion object {
-        fun newInstance(currentThemeType: ThemeType, changeTheme: (themeType: ThemeType) -> Unit): ChangeColorThemeDialog {
+        private const val THEME_TYPE_KEY = "themeType"
+        fun newInstance(
+            currentThemeType: ThemeType,
+            changeTheme: (themeType: ThemeType) -> Unit
+        ): ChangeColorThemeDialog {
             val dialog = ChangeColorThemeDialog()
+            val arguments = Bundle()
+            arguments.putSerializable(THEME_TYPE_KEY, currentThemeType)
+            dialog.arguments = arguments
             dialog.changeTheme = changeTheme
-            dialog.currentThemeType = currentThemeType
             return dialog
         }
 
@@ -29,6 +35,9 @@ class ChangeColorThemeDialog : BaseDialog() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             binding = ChangeThemeDialogBinding.inflate(LayoutInflater.from(it))
+            arguments?.let { bundle ->
+                currentThemeType = bundle.getSerializable(THEME_TYPE_KEY) as ThemeType
+            } ?: throw IllegalStateException("Arguments cannot be null in $TAG")
             setupButtons()
             val builder = AlertDialog.Builder(it, R.style.DialogTheme)
             builder.setView(binding.root)

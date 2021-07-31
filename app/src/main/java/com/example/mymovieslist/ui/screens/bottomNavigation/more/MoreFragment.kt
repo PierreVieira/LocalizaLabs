@@ -10,13 +10,16 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.mymovieslist.R
+import com.example.mymovieslist.data.MySharedPreferences
 import com.example.mymovieslist.databinding.FragmentMoreBinding
+import com.example.mymovieslist.enums.FragmentNavigationType
 import com.example.mymovieslist.enums.ThemeType
 import com.example.mymovieslist.ui.dialogs.ChangeColorThemeDialog
 import com.example.mymovieslist.ui.main.MainActivity
+import com.example.mymovieslist.ui.screens.bottomNavigation.BaseNavigationFragment
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.MoreAdapter
 
-class MoreFragment : Fragment() {
+class MoreFragment : BaseNavigationFragment(FragmentNavigationType.MORE) {
 
     private lateinit var binding: FragmentMoreBinding
     private lateinit var headerView: View
@@ -70,4 +73,5 @@ class MoreFragment : Fragment() {
 //            TODO("Not yet implemented")
         }
     }
+
 }

@@ -7,6 +7,7 @@ import com.example.mymovieslist.R
 import com.example.mymovieslist.data.moreData.MoreData
 import com.example.mymovieslist.data.MySharedPreferences
 import com.example.mymovieslist.data.moreData.model.MoreItem
+import com.example.mymovieslist.enums.FragmentNavigationType
 import com.example.mymovieslist.enums.MenuOptionType
 import com.example.mymovieslist.enums.ThemeType
 
@@ -27,4 +28,5 @@ class MoreViewModel(application: Application) : AndroidViewModel(application) {
         }
 
     private fun getString(id: Int) = getApplication<Application>().getString(id)
+
 }
