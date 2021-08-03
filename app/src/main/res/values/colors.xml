@@ -39,5 +39,5 @@
     <color name="shadow_end_color">#22FFFFFF</color>
     <color name="overlay">#5000</color>
 
-    <color name="dialog_button_border">#D1D1D1</color>
+    <color name="border">#D1D1D1</color>
 </resources>

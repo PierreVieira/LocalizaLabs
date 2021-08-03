@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:focusable="false"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/menu_list_item_padding_top_down"
+    android:paddingBottom="@dimen/menu_list_item_padding_top_down">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:background="@color/border" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:paddingLeft="@dimen/menu_list_item_padding_left_right"
+        android:paddingTop="@dimen/menu_list_item_padding_top_down"
+        android:paddingRight="@dimen/menu_list_item_padding_left_right"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="@string/settings" />
+</LinearLayout>
+
+
+

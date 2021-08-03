@@ -4,14 +4,16 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mymovieslist.R
+import com.example.mymovieslist.data.model.MoreItem
 import com.example.mymovieslist.enums.MoreItemType
-import com.example.mymovieslist.data.moreData.model.MoreItem
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.SettingsListener
-import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.MoreBaseViewHolder
-import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.SettingViewHolder
-import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.SocialViewHolder
+import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.base.MoreBaseViewHolder
+import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.option.SettingViewHolder
+import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.option.SocialViewHolder
+import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.simpleText.MoreListSimpleTextViewHolder
 
 class MoreAdapter(
     private val context: Context,
@@ -24,14 +26,15 @@ class MoreAdapter(
         LOGIN,
         SETTINGS,
         SOCIAL,
-        SUBTITLE;
+        SUBTITLE,
+        TITLE;
 
         companion object {
             fun getEnumFromPosition(position: Int): TypeItems {
                 if (position >= 0 && position < values().size) {
                     return values()[position]
                 } else {
-                    throw IllegalStateException("Invalid listItem position : $position")
+                    throw IllegalArgumentException("Invalid listItem position : $position")
                 }
             }
         }
@@ -41,24 +44,31 @@ class MoreAdapter(
         val itemView: View
         val inflater = LayoutInflater.from(parent.context)
         return when (TypeItems.getEnumFromPosition(viewType)) {
-            TypeItems.SETTINGS -> {
-                itemView = inflater.inflate(R.layout.option_item_more_setting, parent, false)
-                SettingViewHolder(itemView, context, settingsListener)
-            }
-            TypeItems.SOCIAL -> {
-                itemView = inflater.inflate(R.layout.option_item_more_social, parent, false)
-                SocialViewHolder(itemView, context)
-            }
             TypeItems.LOGIN -> {
                 // TODO
                 throw IllegalArgumentException("Login not implemented yet.")
             }
+            TypeItems.TITLE -> {
+                itemView = inflate(inflater, R.layout.more_list_title_item, parent)
+                MoreListSimpleTextViewHolder(itemView, context)
+            }
             TypeItems.SUBTITLE -> {
-                // TODO
-                throw IllegalArgumentException("Subtitle not implemented yet.")
+                itemView = inflate(inflater, R.layout.more_list_subtitle_item, parent)
+                MoreListSimpleTextViewHolder(itemView, context)
+            }
+            TypeItems.SETTINGS -> {
+                itemView = inflate(inflater, R.layout.option_item_more_setting, parent)
+                SettingViewHolder(itemView, context, settingsListener)
+            }
+            TypeItems.SOCIAL -> {
+                itemView = inflate(inflater, R.layout.option_item_more_social, parent)
+                SocialViewHolder(itemView, context)
             }
         }
     }
+
+    private fun inflate(layoutInflater: LayoutInflater, @LayoutRes layout: Int, parent: ViewGroup) =
+        layoutInflater.inflate(layout, parent, false)
 
     override fun onBindViewHolder(holder: MoreBaseViewHolder, position: Int) {
         val item = listItems[position]
@@ -68,18 +78,16 @@ class MoreAdapter(
     override fun getItemCount() = listItems.size
 
     override fun getItemViewType(position: Int) = when (listItems[position].type) {
+        MoreItemType.LOGIN -> TypeItems.LOGIN.ordinal
+        MoreItemType.TITLE -> TypeItems.TITLE.ordinal
+        MoreItemType.THEME -> TypeItems.SETTINGS.ordinal
+        MoreItemType.MENU -> TypeItems.SETTINGS.ordinal
+        MoreItemType.LINE_SOCIAL_MEDIA -> TypeItems.SUBTITLE.ordinal
         MoreItemType.GITHUB -> TypeItems.SOCIAL.ordinal
         MoreItemType.LINKEDIN -> TypeItems.SOCIAL.ordinal
+        MoreItemType.YOUTUBE -> TypeItems.SOCIAL.ordinal
         MoreItemType.INSTAGRAM -> TypeItems.SOCIAL.ordinal
         MoreItemType.FACEBOOK -> TypeItems.SOCIAL.ordinal
-        MoreItemType.YOUTUBE -> TypeItems.SOCIAL.ordinal
-        MoreItemType.LINE_SOCIAL_MEDIA -> TypeItems.SUBTITLE.ordinal
-        MoreItemType.LOGIN -> TypeItems.LOGIN.ordinal
-        MoreItemType.MENU -> TypeItems.SETTINGS.ordinal
-        MoreItemType.THEME -> TypeItems.SETTINGS.ordinal
     }
 
-    fun updateChangeThemeLabel() {
-        notifyItemChanged(1)
-    }
 }

@@ -51,4 +51,6 @@
     <string name="dark">Dark</string>
     <string name="light">Light</string>
     <string name="system_color">System Colors</string>
+    <string name="settings">Settings</string>
+    <string name="follow_my_social_networks">Follow my social networks</string>
 </resources>

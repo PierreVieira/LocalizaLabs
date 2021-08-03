@@ -4,11 +4,15 @@ import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.mymovieslist.enums.FragmentNavigationType
+import com.example.mymovieslist.enums.MenuOptionType
 import com.example.mymovieslist.enums.ThemeType
+import com.example.mymovieslist.utils.Mapper
+import com.google.android.material.navigation.NavigationBarView
 import java.lang.IllegalStateException
 
 object MySharedPreferences {
     private const val THEME_KEY = "themeKey"
+    private const val MENU_CONFIG_KEY = "menuConfigKey"
     private const val FRAGMENT_NAVIGATION_KEY = "fragmentNavigationKey"
     private var sharedPreferences: SharedPreferences? = null
 
@@ -34,23 +38,31 @@ object MySharedPreferences {
         } ?: throw IllegalStateException("Shared preferences is null on savePreferenceString")
     }
 
-    fun getLastTheme() = sharedPreferences?.let {
-        when (it.getString(THEME_KEY, ThemeType.SYSTEM.name)) {
-            ThemeType.SYSTEM.name -> ThemeType.SYSTEM
-            ThemeType.DARK.name -> ThemeType.DARK
-            ThemeType.LIGHT.name -> ThemeType.LIGHT
-            else -> throw IllegalArgumentException("Saved theme on shared preference is not valid")
-        }
-    } ?: throw IllegalStateException("Shared preferences is null on getLastTheme")
+    private fun safeGetPreference(action: (sharedPreferences: SharedPreferences) -> Any) =
+        sharedPreferences?.let {
+            action.invoke(it)
+        } ?: throw IllegalStateException("Shared preferences is null when read property")
 
-    fun getFirstFragment() = sharedPreferences?.let {
-        when (it.getString(FRAGMENT_NAVIGATION_KEY, FragmentNavigationType.HOME.name)) {
-            FragmentNavigationType.HOME.name -> FragmentNavigationType.HOME
-            FragmentNavigationType.MOVIES.name -> FragmentNavigationType.MOVIES
-            FragmentNavigationType.SEARCH.name -> FragmentNavigationType.SEARCH
-            FragmentNavigationType.TOP_PEOPLES.name -> FragmentNavigationType.TOP_PEOPLES
-            FragmentNavigationType.MORE.name -> FragmentNavigationType.MORE
-            else -> throw IllegalArgumentException("Fragment navigation on shared preference is not valid")
-        }
-    } ?: throw IllegalStateException("Shared preferences is null on getFirstFragment")
+    fun getLastTheme() = safeGetPreference {
+        Mapper.mapThemeNameToThemeType(
+            it.getString(THEME_KEY, ThemeType.SYSTEM.name)
+        )
+    } as ThemeType
+
+    fun getFirstFragment() = safeGetPreference {
+        Mapper.mapFragmentNavigationNameToFragmentNavigationType(
+            it.getString(
+                FRAGMENT_NAVIGATION_KEY, FragmentNavigationType.HOME.name
+            )
+        )
+    } as FragmentNavigationType
+
+    fun getLastMenuVisibilityMode() = safeGetPreference {
+        Mapper.mapMenuConfigCodeToMenuConfigType(
+            it.getInt(
+                MENU_CONFIG_KEY,
+                NavigationBarView.LABEL_VISIBILITY_LABELED
+            )
+        )
+    } as MenuOptionType
 }

@@ -9,7 +9,7 @@ import com.example.mymovieslist.R
 import com.example.mymovieslist.databinding.ChangeThemeDialogBinding
 import com.example.mymovieslist.enums.ThemeType
 
-class ChangeColorThemeDialog : BaseDialog() {
+class ColorThemeDialog : BaseDialog() {
 
     private lateinit var binding: ChangeThemeDialogBinding
     private lateinit var currentThemeType: ThemeType
@@ -20,8 +20,8 @@ class ChangeColorThemeDialog : BaseDialog() {
         fun newInstance(
             currentThemeType: ThemeType,
             changeTheme: (themeType: ThemeType) -> Unit
-        ): ChangeColorThemeDialog {
-            val dialog = ChangeColorThemeDialog()
+        ): ColorThemeDialog {
+            val dialog = ColorThemeDialog()
             val arguments = Bundle()
             arguments.putSerializable(THEME_TYPE_KEY, currentThemeType)
             dialog.arguments = arguments
@@ -29,7 +29,7 @@ class ChangeColorThemeDialog : BaseDialog() {
             return dialog
         }
 
-        private val TAG = ChangeColorThemeDialog::class.java.simpleName
+        private val TAG = ColorThemeDialog::class.java.simpleName
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

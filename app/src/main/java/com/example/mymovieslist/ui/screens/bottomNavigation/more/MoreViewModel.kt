@@ -1,32 +1,35 @@
 package com.example.mymovieslist.ui.screens.bottomNavigation.more
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
-import com.example.mymovieslist.R
-import com.example.mymovieslist.data.moreData.MoreData
 import com.example.mymovieslist.data.MySharedPreferences
-import com.example.mymovieslist.data.moreData.model.MoreItem
-import com.example.mymovieslist.enums.FragmentNavigationType
+import com.example.mymovieslist.data.model.MoreItem
+import com.example.mymovieslist.data.model.clickable.settings.MenuIconsItem
+import com.example.mymovieslist.data.model.clickable.settings.ThemeItem
+import com.example.mymovieslist.data.model.clickable.social.*
+import com.example.mymovieslist.data.model.simpleText.SubtitleMoreItem
+import com.example.mymovieslist.data.model.simpleText.TitleMoreItem
 import com.example.mymovieslist.enums.MenuOptionType
 import com.example.mymovieslist.enums.ThemeType
 
-class MoreViewModel(application: Application) : AndroidViewModel(application) {
+class MoreViewModel : ViewModel() {
     val dataList: List<MoreItem>
-        get() = MoreData.getData(getCurrentTheme(), MenuOptionType.ALWAYS_SHOW)
+        get() = getData(getCurrentTheme(), MenuOptionType.ALWAYS_SHOW)
 
     fun saveCurrentTheme(themeType: ThemeType) {
         MySharedPreferences.saveLastTheme(themeType)
     }
 
     fun getCurrentTheme() = MySharedPreferences.getLastTheme()
-    fun mapThemeToString(themeType: ThemeType) =
-        when (themeType) {
-            ThemeType.SYSTEM -> getString(R.string.theme_system_subtitle)
-            ThemeType.LIGHT -> getString(R.string.light)
-            ThemeType.DARK -> getString(R.string.dark)
-        }
 
-    private fun getString(id: Int) = getApplication<Application>().getString(id)
-
+    private fun getData(themeType: ThemeType, menuOption: MenuOptionType) = listOf(
+        TitleMoreItem(),
+        ThemeItem(themeType),
+        MenuIconsItem(menuOption),
+        SubtitleMoreItem(),
+        GithubItem(),
+        LinkedinItem(),
+        YoutubeItem(),
+        InstagramItem(),
+        FacebookItem()
+    )
 }

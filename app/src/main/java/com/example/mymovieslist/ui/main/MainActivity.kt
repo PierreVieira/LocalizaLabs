@@ -1,14 +1,10 @@
 package com.example.mymovieslist.ui.main
 
-import android.content.Context
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.example.mymovieslist.R
@@ -16,6 +12,7 @@ import com.example.mymovieslist.data.MySharedPreferences
 import com.example.mymovieslist.databinding.ActivityMainBinding
 import com.example.mymovieslist.enums.FragmentNavigationType
 import com.example.mymovieslist.enums.ThemeType
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
@@ -42,10 +39,19 @@ class MainActivity : AppCompatActivity() {
         if (navController == null) {
             navController =
                 (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).navController
-            NavigationUI.setupWithNavController(binding.bottomNavigation, navController!!)
+            val bottomNavigation = getBottomNavigation()
+            NavigationUI.setupWithNavController(bottomNavigation, navController!!)
             navGraph = navController!!.navInflater.inflate(R.navigation.nav_graph)
             setStartNavigation()
         }
+    }
+
+    private fun getBottomNavigation(): BottomNavigationView {
+        val bottomNavigation = binding.bottomNavigation
+        bottomNavigation.labelVisibilityMode = viewModel.mapNavigationLabelToPreferenceMenuOption(
+            MySharedPreferences.getLastMenuVisibilityMode()
+        )
+        return bottomNavigation
     }
 
     private fun setStartNavigation() {

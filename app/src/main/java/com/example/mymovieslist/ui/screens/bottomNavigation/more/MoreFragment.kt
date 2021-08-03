@@ -5,16 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.example.mymovieslist.R
-import com.example.mymovieslist.data.MySharedPreferences
 import com.example.mymovieslist.databinding.FragmentMoreBinding
 import com.example.mymovieslist.enums.FragmentNavigationType
 import com.example.mymovieslist.enums.ThemeType
-import com.example.mymovieslist.ui.dialogs.ChangeColorThemeDialog
+import com.example.mymovieslist.ui.dialogs.ColorThemeDialog
 import com.example.mymovieslist.ui.main.MainActivity
 import com.example.mymovieslist.ui.screens.bottomNavigation.BaseNavigationFragment
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.MoreAdapter
@@ -22,7 +18,6 @@ import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.MoreAda
 class MoreFragment : BaseNavigationFragment(FragmentNavigationType.MORE) {
 
     private lateinit var binding: FragmentMoreBinding
-    private lateinit var headerView: View
     private lateinit var requiredContext: Context
     private val viewModel: MoreViewModel by viewModels()
     private var changeThemeSubtitleTextView: AppCompatTextView? = null
@@ -31,7 +26,6 @@ class MoreFragment : BaseNavigationFragment(FragmentNavigationType.MORE) {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        headerView = inflater.inflate(R.layout.default_header_fragment, container, false)
         binding = FragmentMoreBinding.inflate(inflater)
         return binding.root
     }
@@ -39,8 +33,6 @@ class MoreFragment : BaseNavigationFragment(FragmentNavigationType.MORE) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         requiredContext = requireContext()
-        headerView.findViewById<TextView>(R.id.title).text = resources.getText(R.string.more)
-        binding.customHeaderView.setView(headerView)
         setupRecyclerView()
     }
 
@@ -62,7 +54,7 @@ class MoreFragment : BaseNavigationFragment(FragmentNavigationType.MORE) {
 
     private fun createSettingsListener() = object : SettingsListener {
         override fun showChangeThemeDialog(changeThemeSubtitleTextView: AppCompatTextView) {
-            ChangeColorThemeDialog.newInstance(viewModel.getCurrentTheme()) { themeType ->
+            ColorThemeDialog.newInstance(viewModel.getCurrentTheme()) { themeType ->
                 changeThemeListener(themeType)
                 setupRecyclerView()
             }.show(activity?.supportFragmentManager)

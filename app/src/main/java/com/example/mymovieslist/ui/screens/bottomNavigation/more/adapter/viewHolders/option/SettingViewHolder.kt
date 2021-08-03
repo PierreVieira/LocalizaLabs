@@ -1,11 +1,11 @@
-package com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders
+package com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.option
 
 import android.content.Context
 import android.view.View
 import com.example.mymovieslist.R
 import com.example.mymovieslist.enums.MoreItemType
-import com.example.mymovieslist.data.moreData.model.MoreItem
-import com.example.mymovieslist.data.moreData.model.ThemeItem
+import com.example.mymovieslist.data.model.MoreItem
+import com.example.mymovieslist.data.model.clickable.settings.ThemeItem
 import com.example.mymovieslist.enums.ThemeType
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.SettingsListener
 

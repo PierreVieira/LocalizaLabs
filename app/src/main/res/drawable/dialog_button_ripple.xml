@@ -5,7 +5,7 @@
         <shape android:shape="rectangle">
             <stroke
                 android:width="@dimen/stroke_rounded_width"
-                android:color="@color/dialog_button_border" />
+                android:color="@color/border" />
             <solid android:color="@color/ripple" />
             <corners android:radius="@dimen/buttom_radius" />
         </shape>
@@ -15,7 +15,7 @@
         <shape android:shape="rectangle">
             <stroke
                 android:width="@dimen/stroke_rounded_width"
-                android:color="@color/dialog_button_border" />
+                android:color="@color/border" />
             <corners android:radius="@dimen/buttom_radius" />
         </shape>
     </item>

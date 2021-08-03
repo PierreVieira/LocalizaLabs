@@ -20,5 +20,5 @@
     <color name="navigation_bar_item_unselected">#ABABAB</color>
     <color name="navigation_bar_item_selected">@color/primary</color>
 
-    <color name="dialog_button_border">#85FFFFFF</color>
+    <color name="border">#85FFFFFF</color>
 </resources>

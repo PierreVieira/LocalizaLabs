@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/default_header_height">
 
-    <TextView
-        android:id="@+id/title"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/header_margin"

@@ -1,4 +1,4 @@
-package com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders
+package com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.option
 
 import android.content.Context
 import android.content.Intent
@@ -6,8 +6,8 @@ import android.net.Uri
 import android.view.View
 import android.widget.Toast
 import com.example.mymovieslist.R
-import com.example.mymovieslist.data.moreData.model.MoreItem
-import com.example.mymovieslist.data.moreData.model.MoreItemSocial
+import com.example.mymovieslist.data.model.MoreItem
+import com.example.mymovieslist.data.model.clickable.social.MoreItemSocial
 
 class SocialViewHolder(itemView: View, private val context: Context) : OptionViewHolder(itemView, context) {
     override fun clickItem(moreItem: MoreItem) {

@@ -4,9 +4,16 @@ import android.app.Application
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
+import com.example.mymovieslist.enums.MenuOptionType
 import com.example.mymovieslist.enums.ThemeType
+import com.google.android.material.navigation.NavigationBarView
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
+
+    val currentMenuOption : MutableLiveData<MenuOptionType> by lazy {
+        MutableLiveData<MenuOptionType>()
+    }
 
     fun changeTheme(selected: ThemeType) {
         when (selected) {
@@ -32,4 +39,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private fun setThemeColors(mode: Int) {
         AppCompatDelegate.setDefaultNightMode(mode)
     }
+
+    fun mapNavigationLabelToPreferenceMenuOption(lastMenuVisibilityMode: MenuOptionType) =
+        when (lastMenuVisibilityMode) {
+            MenuOptionType.ALWAYS_SHOW -> NavigationBarView.LABEL_VISIBILITY_LABELED
+            MenuOptionType.SHOW_ONLY_SELECTED -> NavigationBarView.LABEL_VISIBILITY_SELECTED
+            else -> NavigationBarView.LABEL_VISIBILITY_UNLABELED
+        }
 }

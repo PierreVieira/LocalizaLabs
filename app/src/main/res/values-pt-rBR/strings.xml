@@ -26,4 +26,6 @@
     <string name="dark">Escuro</string>
     <string name="light">Claro</string>
     <string name="system_color">Cores do Sistema</string>
+    <string name="settings">Configurações</string>
+    <string name="follow_my_social_networks">Siga minhas redes sociais</string>
 </resources>
