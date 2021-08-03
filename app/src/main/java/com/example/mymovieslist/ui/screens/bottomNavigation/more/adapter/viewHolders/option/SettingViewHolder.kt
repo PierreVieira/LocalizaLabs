@@ -18,6 +18,8 @@ class SettingViewHolder(
     override fun clickItem(moreItem: MoreItem) {
         if (moreItem.type == MoreItemType.THEME) {
             settingsListener.showChangeThemeDialog(itemSubTitle)
+        } else {
+            settingsListener.showChangeMenuConfigsDialog()
         }
     }
 

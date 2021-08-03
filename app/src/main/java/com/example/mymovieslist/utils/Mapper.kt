@@ -1,6 +1,6 @@
 package com.example.mymovieslist.utils
 
-import com.example.mymovieslist.data.MySharedPreferences
+import com.example.mymovieslist.R
 import com.example.mymovieslist.enums.FragmentNavigationType
 import com.example.mymovieslist.enums.MenuOptionType
 import com.example.mymovieslist.enums.ThemeType
@@ -27,5 +27,25 @@ object Mapper {
         ThemeType.DARK.name -> ThemeType.DARK
         else -> ThemeType.LIGHT
     }
+
+    fun mapFragmentNavigationTypeToStartDestination(
+        fragmentTypeNavigation: FragmentNavigationType,
+        setStartDestination: (Int) -> Unit
+    ) {
+        when (fragmentTypeNavigation) {
+            FragmentNavigationType.HOME -> setStartDestination(R.id.home_screen)
+            FragmentNavigationType.MOVIES -> setStartDestination(R.id.movies_screen)
+            FragmentNavigationType.SEARCH -> setStartDestination(R.id.search_screen)
+            FragmentNavigationType.TOP_PEOPLES -> setStartDestination(R.id.top_peoples_screen)
+            FragmentNavigationType.MORE -> setStartDestination(R.id.more_screen)
+        }
+    }
+
+    fun mapMenuOptionTypeToNavigationLabel(lastMenuVisibilityMode: MenuOptionType) =
+        when (lastMenuVisibilityMode) {
+            MenuOptionType.ALWAYS_SHOW -> NavigationBarView.LABEL_VISIBILITY_LABELED
+            MenuOptionType.SHOW_ONLY_SELECTED -> NavigationBarView.LABEL_VISIBILITY_SELECTED
+            else -> NavigationBarView.LABEL_VISIBILITY_UNLABELED
+        }
 
 }

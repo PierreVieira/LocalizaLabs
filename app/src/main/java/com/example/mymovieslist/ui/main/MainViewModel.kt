@@ -5,15 +5,13 @@ import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.example.mymovieslist.data.MySharedPreferences
 import com.example.mymovieslist.enums.MenuOptionType
 import com.example.mymovieslist.enums.ThemeType
+import com.example.mymovieslist.utils.Mapper
 import com.google.android.material.navigation.NavigationBarView
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
-
-    val currentMenuOption : MutableLiveData<MenuOptionType> by lazy {
-        MutableLiveData<MenuOptionType>()
-    }
 
     fun changeTheme(selected: ThemeType) {
         when (selected) {
@@ -28,6 +26,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun helpToStartNavigation(setStartDestination: (Int) -> Unit) {
+        Mapper.mapFragmentNavigationTypeToStartDestination(
+            MySharedPreferences.getFirstFragment()
+        ) { id: Int -> setStartDestination(id) }
+    }
+
     private fun changeToLightTheme() {
         setThemeColors(AppCompatDelegate.MODE_NIGHT_NO)
     }
@@ -40,10 +44,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         AppCompatDelegate.setDefaultNightMode(mode)
     }
 
-    fun mapNavigationLabelToPreferenceMenuOption(lastMenuVisibilityMode: MenuOptionType) =
-        when (lastMenuVisibilityMode) {
-            MenuOptionType.ALWAYS_SHOW -> NavigationBarView.LABEL_VISIBILITY_LABELED
-            MenuOptionType.SHOW_ONLY_SELECTED -> NavigationBarView.LABEL_VISIBILITY_SELECTED
-            else -> NavigationBarView.LABEL_VISIBILITY_UNLABELED
-        }
+    fun saveLastVisibilityMode(labelVisibilityMode: Int) {
+        MySharedPreferences.saveLastVisibilityMode(labelVisibilityMode)
+    }
+
 }

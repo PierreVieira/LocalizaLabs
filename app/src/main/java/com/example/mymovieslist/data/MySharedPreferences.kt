@@ -38,6 +38,14 @@ object MySharedPreferences {
         } ?: throw IllegalStateException("Shared preferences is null on savePreferenceString")
     }
 
+    private fun savePreferenceInt(key: String, value: Int) {
+        sharedPreferences?.let {
+            with(it.edit()) {
+                putInt(key, value).apply()
+            }
+        } ?: throw IllegalStateException("Shared preferences is null on savePreferenceInt")
+    }
+
     private fun safeGetPreference(action: (sharedPreferences: SharedPreferences) -> Any) =
         sharedPreferences?.let {
             action.invoke(it)
@@ -65,4 +73,8 @@ object MySharedPreferences {
             )
         )
     } as MenuOptionType
+
+    fun saveLastVisibilityMode(labelVisibilityMode: Int) {
+        savePreferenceInt(MENU_CONFIG_KEY, labelVisibilityMode)
+    }
 }

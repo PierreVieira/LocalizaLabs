@@ -1,5 +1,6 @@
 package com.example.mymovieslist.ui.screens.bottomNavigation.more
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.mymovieslist.data.MySharedPreferences
 import com.example.mymovieslist.data.model.MoreItem
@@ -14,6 +15,10 @@ import com.example.mymovieslist.enums.ThemeType
 class MoreViewModel : ViewModel() {
     val dataList: List<MoreItem>
         get() = getData(getCurrentTheme(), MenuOptionType.ALWAYS_SHOW)
+
+    val currentMenuOption : MutableLiveData<MenuOptionType> by lazy {
+        MutableLiveData<MenuOptionType>()
+    }
 
     fun saveCurrentTheme(themeType: ThemeType) {
         MySharedPreferences.saveLastTheme(themeType)
