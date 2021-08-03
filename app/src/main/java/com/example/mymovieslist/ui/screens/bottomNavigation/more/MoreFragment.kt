@@ -66,6 +66,7 @@ class MoreFragment : BaseNavigationFragment(FragmentNavigationType.MORE) {
 
         override fun showChangeMenuConfigsDialog() {
             val activity = requireActivity() as MainActivity
+            //TODO: Exibir dialog aqui, essa lógica do option é só para teste interno
             val option = getOptionDifferentPreferences()
             activity.updateVisibilityIconsOnBottomNavigation(option)
         }
