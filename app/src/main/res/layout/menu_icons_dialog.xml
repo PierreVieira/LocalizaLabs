@@ -15,7 +15,7 @@
         android:layout_marginTop="@dimen/other_options_popup_title_margin"
         android:layout_marginBottom="@dimen/cancel_popup_title_bottom_margin"
         android:gravity="center"
-        android:text="@string/change_theme_color"
+        android:text="@string/change_description_menu_icons"
         android:textSize="@dimen/title_dialog_size"
         android:textStyle="bold" />
 
@@ -27,46 +27,47 @@
         android:layout_marginRight="@dimen/subtitle_text_margin"
         android:gravity="center"
         android:padding="@dimen/text_button_padding_size"
-        android:text="@string/change_theme_color_description"
+        android:text="@string/change_menu_icons_description"
         android:textColor="@color/text_subtitle"
         android:textSize="@dimen/subtitle_text_size" />
-
-    <RadioGroup
-        android:id="@+id/radio_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:textAlignment="center">
-
-        <androidx.appcompat.widget.AppCompatRadioButton
-            android:id="@+id/radio_dark"
-            style="@style/RadioButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/space_between_option_colors"
-            android:text="@string/dark" />
-
-        <androidx.appcompat.widget.AppCompatRadioButton
-            android:id="@+id/radio_system"
-            style="@style/RadioButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/space_between_option_colors"
-            android:text="@string/system_color" />
-
-        <androidx.appcompat.widget.AppCompatRadioButton
-            android:id="@+id/radio_light"
-            style="@style/RadioButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/space_between_option_colors"
-            android:text="@string/light" />
-    </RadioGroup>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/button_margin">
+
+        <RadioGroup
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/no"
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radio_show_always"
+                style="@style/RadioButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_between_option_colors"
+                android:text="@string/always_show_menu_icons_description" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radio_show_only_selected"
+                style="@style/RadioButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_between_option_colors"
+                android:text="@string/show_only_selected_menu_icons_description" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radio_show_never"
+                style="@style/RadioButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_between_option_colors"
+                android:text="@string/never_show_menu_icons_description" />
+        </RadioGroup>
 
         <TextView
             android:id="@+id/no"

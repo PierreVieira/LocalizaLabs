@@ -28,4 +28,11 @@
     <string name="system_color">Cores do Sistema</string>
     <string name="settings">Configurações</string>
     <string name="follow_my_social_networks">Siga minhas redes sociais</string>
+    <string name="change_description_menu_icons">Mudar Descrição De Ícones De Menu</string>
+    <string name="change_menu_icons_description">Escolha como o aplicativo deve exibir os ícones de navegação</string>
+    <string name="always_show_menu_icons_description">Sempre mostrar os textos de ícones de navegação (recomendado)</string>
+    <string name="always_show_menu_icons_description_list">Sempre mostrar o texto</string>
+    <string name="show_only_selected_menu_icons_description">Mostrar os textos de ícones de navegação apenas se a página estiver selecionada</string>
+    <string name="show_only_selected_menu_icons_description_list">Mostrar textos apenas na opção de menu selecionada</string>
+    <string name="never_show_menu_icons_description">Nunca mostrar os textos de ícones de navegação</string>
 </resources>

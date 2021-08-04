@@ -8,6 +8,8 @@ import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mymovieslist.R
 import com.example.mymovieslist.data.model.MoreItem
+import com.example.mymovieslist.data.model.clickable.settings.MenuIconsItem
+import com.example.mymovieslist.enums.MenuOptionType
 import com.example.mymovieslist.enums.MoreItemType
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.SettingsListener
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.base.MoreBaseViewHolder
@@ -88,6 +90,12 @@ class MoreAdapter(
         MoreItemType.YOUTUBE -> TypeItems.SOCIAL.ordinal
         MoreItemType.INSTAGRAM -> TypeItems.SOCIAL.ordinal
         MoreItemType.FACEBOOK -> TypeItems.SOCIAL.ordinal
+    }
+
+    fun setMenuNavigationOptionType(menuOptionType: MenuOptionType) {
+        val position = listItems.indexOfFirst { it is MenuIconsItem }
+        (listItems[position] as MenuIconsItem).currentMenuOptionType = menuOptionType
+        notifyItemChanged(position)
     }
 
 }

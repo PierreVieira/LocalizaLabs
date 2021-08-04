@@ -53,4 +53,11 @@
     <string name="system_color">System Colors</string>
     <string name="settings">Settings</string>
     <string name="follow_my_social_networks">Follow my social networks</string>
+    <string name="change_description_menu_icons">Change Description Menu Icons</string>
+    <string name="change_menu_icons_description">Choose how the app should display navigation icons</string>
+    <string name="always_show_menu_icons_description">Always show navigation icon texts (recommended)</string>
+    <string name="always_show_menu_icons_description_list">Always show the text</string>
+    <string name="show_only_selected_menu_icons_description">Show navigation icon texts only if the page is selected</string>
+    <string name="show_only_selected_menu_icons_description_list">Show texts only in selected menu option</string>
+    <string name="never_show_menu_icons_description">Never show navigation icon texts</string>
 </resources>

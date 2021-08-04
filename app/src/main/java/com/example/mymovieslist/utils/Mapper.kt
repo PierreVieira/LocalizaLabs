@@ -19,7 +19,7 @@ object Mapper {
     fun mapMenuConfigCodeToMenuConfigType(menuConfigCode: Int) = when (menuConfigCode) {
         NavigationBarView.LABEL_VISIBILITY_LABELED -> MenuOptionType.ALWAYS_SHOW
         NavigationBarView.LABEL_VISIBILITY_SELECTED -> MenuOptionType.SHOW_ONLY_SELECTED
-        else -> MenuOptionType.ALWAYS_NOT_SHOW
+        else -> MenuOptionType.NEVER_SHOW
     }
 
     fun mapThemeNameToThemeType(themeName: String?) = when (themeName) {

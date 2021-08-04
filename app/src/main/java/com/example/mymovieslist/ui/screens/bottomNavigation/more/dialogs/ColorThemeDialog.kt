@@ -1,15 +1,14 @@
-package com.example.mymovieslist.ui.dialogs
+package com.example.mymovieslist.ui.screens.bottomNavigation.more.dialogs
 
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
-import androidx.fragment.app.FragmentManager
 import com.example.mymovieslist.R
 import com.example.mymovieslist.databinding.ChangeThemeDialogBinding
 import com.example.mymovieslist.enums.ThemeType
 
-class ColorThemeDialog : BaseDialog() {
+class ColorThemeDialog : BaseDialog(TAG) {
 
     private lateinit var binding: ChangeThemeDialogBinding
     private lateinit var currentThemeType: ThemeType
@@ -17,6 +16,7 @@ class ColorThemeDialog : BaseDialog() {
 
     companion object {
         private const val THEME_TYPE_KEY = "themeType"
+        private val TAG = ColorThemeDialog::class.java.simpleName
         fun newInstance(
             currentThemeType: ThemeType,
             changeTheme: (themeType: ThemeType) -> Unit
@@ -28,8 +28,6 @@ class ColorThemeDialog : BaseDialog() {
             dialog.changeTheme = changeTheme
             return dialog
         }
-
-        private val TAG = ColorThemeDialog::class.java.simpleName
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -45,18 +43,7 @@ class ColorThemeDialog : BaseDialog() {
         } ?: throw IllegalStateException("Activity cannot be null in $TAG")
     }
 
-    private fun setupButtons() {
-        setupOkButton()
-        setupCancelButton()
-        setupRadioButton()
-    }
-
-    private fun setupRadioButton() {
-        initializeCurrentRadioButton()
-        setupRadioButtonClicks()
-    }
-
-    private fun setupRadioButtonClicks() {
+    override fun setupRadioButtonClicks() {
         binding.radioDark.setOnClickListener {
             currentThemeType = ThemeType.DARK
         }
@@ -68,7 +55,7 @@ class ColorThemeDialog : BaseDialog() {
         }
     }
 
-    private fun initializeCurrentRadioButton() {
+    override fun initializeCurrentRadioButton() {
         when (currentThemeType) {
             ThemeType.LIGHT -> binding.radioLight.isChecked = true
             ThemeType.DARK -> binding.radioDark.isChecked = true
@@ -76,24 +63,17 @@ class ColorThemeDialog : BaseDialog() {
         }
     }
 
-    private fun setupOkButton() {
+    override fun setupOkButton() {
         binding.yes.setOnClickListener {
             dismiss()
             changeTheme?.invoke(currentThemeType)
         }
     }
 
-    private fun setupCancelButton() {
+    override fun setupCancelButton() {
         binding.no.setOnClickListener {
             dismiss()
         }
     }
-
-    fun show(manager: FragmentManager?) {
-        manager?.let {
-            super.show(manager, TAG)
-        } ?: throw IllegalStateException("Fragment manager cannot be null in $TAG")
-    }
-
 
 }

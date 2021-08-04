@@ -14,7 +14,7 @@ import com.example.mymovieslist.enums.ThemeType
 
 class MoreViewModel : ViewModel() {
     val dataList: List<MoreItem>
-        get() = getData(getCurrentTheme(), MenuOptionType.ALWAYS_SHOW)
+        get() = getData(getCurrentTheme(), getCurrentMenuOption())
 
     val currentMenuOption : MutableLiveData<MenuOptionType> by lazy {
         MutableLiveData<MenuOptionType>()
@@ -25,6 +25,7 @@ class MoreViewModel : ViewModel() {
     }
 
     fun getCurrentTheme() = MySharedPreferences.getLastTheme()
+    private fun getCurrentMenuOption() = MySharedPreferences.getLastMenuVisibilityMode()
 
     private fun getData(themeType: ThemeType, menuOption: MenuOptionType) = listOf(
         TitleMoreItem(),

@@ -12,18 +12,19 @@ import com.example.mymovieslist.databinding.FragmentMoreBinding
 import com.example.mymovieslist.enums.FragmentNavigationType
 import com.example.mymovieslist.enums.MenuOptionType
 import com.example.mymovieslist.enums.ThemeType
-import com.example.mymovieslist.ui.dialogs.ColorThemeDialog
+import com.example.mymovieslist.ui.screens.bottomNavigation.more.dialogs.ColorThemeDialog
 import com.example.mymovieslist.ui.main.MainActivity
 import com.example.mymovieslist.ui.screens.bottomNavigation.BaseNavigationFragment
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.MoreAdapter
+import com.example.mymovieslist.ui.screens.bottomNavigation.more.dialogs.MenuIconsDialog
 import com.example.mymovieslist.utils.Mapper
 
 class MoreFragment : BaseNavigationFragment(FragmentNavigationType.MORE) {
 
     private lateinit var binding: FragmentMoreBinding
     private lateinit var requiredContext: Context
-    private val viewModel: MoreViewModel by viewModels()
-    private var changeThemeSubtitleTextView: AppCompatTextView? = null
+    val viewModel: MoreViewModel by viewModels()
+    private lateinit var mainActivity: MainActivity
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +37,29 @@ class MoreFragment : BaseNavigationFragment(FragmentNavigationType.MORE) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         requiredContext = requireContext()
+        mainActivity = requireActivity() as MainActivity
         setupRecyclerView()
+        setupCurrentMenuOptionObserver()
+    }
+
+    private fun setupCurrentMenuOptionObserver() {
+        viewModel.currentMenuOption.observe(viewLifecycleOwner, { newMenuOptionType ->
+            updateBottomNavigationLabel(newMenuOptionType)
+            updateAdapterMenuDescription(newMenuOptionType)
+        })
+    }
+
+    private fun updateAdapterMenuDescription(newMenuOptionType: MenuOptionType) {
+        (binding.recyclerView.adapter as MoreAdapter)
+            .setMenuNavigationOptionType(newMenuOptionType)
+    }
+
+    private fun updateBottomNavigationLabel(newMenuOptionType: MenuOptionType) {
+        mainActivity.updateVisibilityIconsOnBottomNavigation(
+            Mapper.mapMenuOptionTypeToNavigationLabel(
+                newMenuOptionType
+            )
+        )
     }
 
     private fun setupRecyclerView() {
@@ -60,23 +83,14 @@ class MoreFragment : BaseNavigationFragment(FragmentNavigationType.MORE) {
             ColorThemeDialog.newInstance(viewModel.getCurrentTheme()) { themeType ->
                 changeThemeListener(themeType)
                 setupRecyclerView()
-            }.show(activity?.supportFragmentManager)
-            this@MoreFragment.changeThemeSubtitleTextView = changeThemeSubtitleTextView
+            }.show(mainActivity.supportFragmentManager)
         }
 
         override fun showChangeMenuConfigsDialog() {
-            val activity = requireActivity() as MainActivity
             //TODO: Exibir dialog aqui, essa lógica do option é só para teste interno
-            val option = getOptionDifferentPreferences()
-            activity.updateVisibilityIconsOnBottomNavigation(option)
+            MenuIconsDialog.newInstance(
+                MySharedPreferences.getLastMenuVisibilityMode()
+            ).show(childFragmentManager)
         }
-
-        private fun getOptionDifferentPreferences() = Mapper.mapMenuOptionTypeToNavigationLabel(
-            when (MySharedPreferences.getLastMenuVisibilityMode()) {
-                MenuOptionType.SHOW_ONLY_SELECTED -> MenuOptionType.ALWAYS_NOT_SHOW
-                MenuOptionType.ALWAYS_NOT_SHOW -> MenuOptionType.ALWAYS_SHOW
-                MenuOptionType.ALWAYS_SHOW -> MenuOptionType.SHOW_ONLY_SELECTED
-            }
-        )
     }
 }

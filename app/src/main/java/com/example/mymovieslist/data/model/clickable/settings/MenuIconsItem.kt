@@ -6,7 +6,7 @@ import com.example.mymovieslist.enums.MenuOptionType
 import com.example.mymovieslist.enums.MoreItemType
 
 class MenuIconsItem(
-    descriptionOption: MenuOptionType
+    var currentMenuOptionType: MenuOptionType
 ) : ClickableMoreItem(
     imageResourceId = R.drawable.ic_baseline_linear_scale,
     titleId = R.string.simplify_menu_icons_title,
