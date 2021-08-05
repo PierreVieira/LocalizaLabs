@@ -15,6 +15,7 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/background</item>
         <item name="android:textColor">@color/text</item>
+        <item name="android:fontFamily">@font/source_sans_pro</item>
         <item name="change_theme_icon">@drawable/ic_baseline_nights_stay</item>
     </style>
 

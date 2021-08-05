@@ -60,4 +60,5 @@
     <string name="show_only_selected_menu_icons_description">Show navigation icon texts only if the page is selected</string>
     <string name="show_only_selected_menu_icons_description_list">Show texts only in selected menu option</string>
     <string name="never_show_menu_icons_description">Never show navigation icon texts</string>
+    <string name="the_most_popular">The most popular</string>
 </resources>

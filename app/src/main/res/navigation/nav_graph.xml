@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home_screen"
-        android:name="com.example.mymovieslist.ui.screens.bottomNavigation.HomeFragment"
+        android:name="com.example.mymovieslist.ui.screens.bottomNavigation.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home"
         >

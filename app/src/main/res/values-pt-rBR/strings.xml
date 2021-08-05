@@ -9,7 +9,7 @@
     <string name="genres">Gêneros</string>
 
     <string name="hello_blank_fragment">Olá fragment em branco</string>
-    <string name="login">Login</string>
+    <string name="login">Entrar</string>
     <string name="home">Início</string>
     <string name="movies">Filmes</string>
     <string name="search">Busca</string>
@@ -35,4 +35,5 @@
     <string name="show_only_selected_menu_icons_description">Mostrar os textos de ícones de navegação apenas se a página estiver selecionada</string>
     <string name="show_only_selected_menu_icons_description_list">Mostrar textos apenas na opção de menu selecionada</string>
     <string name="never_show_menu_icons_description">Nunca mostrar os textos de ícones de navegação</string>
+    <string name="the_most_popular">Mais populares</string>
 </resources>

@@ -14,6 +14,6 @@ class FilmDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_film_details, container, false)
+        return inflater.inflate(R.layout.fragment_movie_details, container, false)
     }
 }

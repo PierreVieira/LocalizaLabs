@@ -1,13 +1,12 @@
-package com.example.mymovieslist.ui.screens.bottomNavigation
+package com.example.mymovieslist.ui.screens.bottomNavigation.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.mymovieslist.R
-import com.example.mymovieslist.data.MySharedPreferences
 import com.example.mymovieslist.enums.FragmentNavigationType
+import com.example.mymovieslist.ui.screens.bottomNavigation.BaseNavigationFragment
 
 class HomeFragment : BaseNavigationFragment(FragmentNavigationType.HOME) {
 
