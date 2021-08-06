@@ -68,8 +68,8 @@ class MovieDetailsAdapter(
     override fun getItemViewType(position: Int) = when (listDetails[position].type) {
         MovieDetailsItemType.IMAGE -> TypeItems.VIDEO.ordinal
         MovieDetailsItemType.TITLE -> TypeItems.MOVIE_TITLE.ordinal
-        MovieDetailsItemType.SYNOPSIS -> TypeItems.MOVIE_TITLE.ordinal
-        MovieDetailsItemType.GENRES -> TypeItems.MOVIE_TITLE.ordinal
+        MovieDetailsItemType.SYNOPSIS -> TypeItems.CARD.ordinal
+        MovieDetailsItemType.GENRES -> TypeItems.CARD.ordinal
     }
 
     override fun getItemCount() = listDetails.size
