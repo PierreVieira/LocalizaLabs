@@ -3,12 +3,12 @@ package com.example.mymovieslist.ui.screens.bottomNavigation.more
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.mymovieslist.data.MySharedPreferences
-import com.example.mymovieslist.data.model.MoreItem
-import com.example.mymovieslist.data.model.clickable.settings.MenuIconsItem
-import com.example.mymovieslist.data.model.clickable.settings.ThemeItem
-import com.example.mymovieslist.data.model.clickable.social.*
-import com.example.mymovieslist.data.model.simpleText.SubtitleMoreItem
-import com.example.mymovieslist.data.model.simpleText.TitleMoreItem
+import com.example.mymovieslist.data.model.screens.more.MoreItem
+import com.example.mymovieslist.data.model.screens.more.clickable.settings.MenuIconsItem
+import com.example.mymovieslist.data.model.screens.more.clickable.settings.ThemeItem
+import com.example.mymovieslist.data.model.screens.more.clickable.social.*
+import com.example.mymovieslist.data.model.screens.more.simpleText.SubtitleMoreItem
+import com.example.mymovieslist.data.model.screens.more.simpleText.TitleMoreItem
 import com.example.mymovieslist.enums.MenuOptionType
 import com.example.mymovieslist.enums.ThemeType
 

@@ -6,8 +6,8 @@ import android.net.Uri
 import android.view.View
 import android.widget.Toast
 import com.example.mymovieslist.R
-import com.example.mymovieslist.data.model.MoreItem
-import com.example.mymovieslist.data.model.clickable.social.MoreItemSocial
+import com.example.mymovieslist.data.model.screens.more.MoreItem
+import com.example.mymovieslist.data.model.screens.more.clickable.social.MoreItemSocial
 
 class SocialViewHolder(itemView: View, private val context: Context) : OptionViewHolder(itemView, context) {
     override fun clickItem(moreItem: MoreItem) {

@@ -9,10 +9,8 @@ import com.google.android.material.navigation.NavigationBarView
 object Mapper {
     fun mapFragmentNavigationNameToFragmentNavigationType(fragmentNavigationName: String?) =
         when (fragmentNavigationName) {
-            FragmentNavigationType.HOME.name -> FragmentNavigationType.HOME
             FragmentNavigationType.MOVIES.name -> FragmentNavigationType.MOVIES
-            FragmentNavigationType.SEARCH.name -> FragmentNavigationType.SEARCH
-            FragmentNavigationType.TOP_PEOPLES.name -> FragmentNavigationType.TOP_PEOPLES
+            FragmentNavigationType.FAVORITES.name -> FragmentNavigationType.FAVORITES
             else -> FragmentNavigationType.MORE
         }
 
@@ -33,10 +31,8 @@ object Mapper {
         setStartDestination: (Int) -> Unit
     ) {
         when (fragmentTypeNavigation) {
-            FragmentNavigationType.HOME -> setStartDestination(R.id.home_screen)
             FragmentNavigationType.MOVIES -> setStartDestination(R.id.movies_screen)
-            FragmentNavigationType.SEARCH -> setStartDestination(R.id.search_screen)
-            FragmentNavigationType.TOP_PEOPLES -> setStartDestination(R.id.top_peoples_screen)
+            FragmentNavigationType.FAVORITES -> setStartDestination(R.id.favorites_screen)
             FragmentNavigationType.MORE -> setStartDestination(R.id.more_screen)
         }
     }

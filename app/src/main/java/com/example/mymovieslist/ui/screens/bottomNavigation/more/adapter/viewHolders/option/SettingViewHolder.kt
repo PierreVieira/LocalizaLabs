@@ -4,9 +4,9 @@ import android.content.Context
 import android.view.View
 import com.example.mymovieslist.R
 import com.example.mymovieslist.enums.MoreItemType
-import com.example.mymovieslist.data.model.MoreItem
-import com.example.mymovieslist.data.model.clickable.settings.MenuIconsItem
-import com.example.mymovieslist.data.model.clickable.settings.ThemeItem
+import com.example.mymovieslist.data.model.screens.more.MoreItem
+import com.example.mymovieslist.data.model.screens.more.clickable.settings.MenuIconsItem
+import com.example.mymovieslist.data.model.screens.more.clickable.settings.ThemeItem
 import com.example.mymovieslist.enums.MenuOptionType
 import com.example.mymovieslist.enums.ThemeType
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.SettingsListener

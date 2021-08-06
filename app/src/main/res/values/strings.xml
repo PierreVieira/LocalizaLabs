@@ -11,11 +11,9 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login">Login</string>
-    <string name="home">Home</string>
     <string name="movies">Movies</string>
-    <string name="search">Search</string>
+    <string name="favorites">Favorites</string>
     <string name="more">More</string>
-    <string name="top_peoples">Top Peoples</string>
     <string name="theme">Theme</string>
     <string name="theme_system_subtitle">Automatic</string>
     <string name="simplify_menu_icons_title">Menu icons navigation</string>
@@ -43,6 +41,20 @@
     <string name="my_instagram_user" translatable="false">\@pierrevieira36</string>
     <string name="my_instagram_link" translatable="false">https://www.instagram.com/pierrevieira36/</string>
 
+    <!-- Months -->
+    <string name="january">jan</string>
+    <string name="february">feb</string>
+    <string name="march">mar</string>
+    <string name="april">apr</string>
+    <string name="may">may</string>
+    <string name="june">jun</string>
+    <string name="july">jul</string>
+    <string name="august">aug</string>
+    <string name="september">sep</string>
+    <string name="october">oct</string>
+    <string name="november">nov</string>
+    <string name="december">dec</string>
+
     <string name="cant_open_link">Sorry, we can\'t open this link</string>
     <string name="change_theme_color">Change Theme Color</string>
     <string name="ok" translatable="false">OK</string>
@@ -61,4 +73,8 @@
     <string name="show_only_selected_menu_icons_description_list">Show texts only in selected menu option</string>
     <string name="never_show_menu_icons_description">Never show navigation icon texts</string>
     <string name="the_most_popular">The most popular</string>
+    <string name="trending_tv">Trending TV</string>
+
+    <string name="movie_date">%s of %s, %s</string>
+    <string name="cant_load">Sorry, we were unable to load this page. Please check your internet connection.</string>
 </resources>

@@ -8,13 +8,25 @@
     <string name="movie_title">Velozes e Furiosos</string>
     <string name="genres">Gêneros</string>
 
+    <!-- Months -->
+    <string name="january">jan</string>
+    <string name="february">fev</string>
+    <string name="march">mar</string>
+    <string name="april">abr</string>
+    <string name="may">mai</string>
+    <string name="june">jun</string>
+    <string name="july">jul</string>
+    <string name="august">aug</string>
+    <string name="september">set</string>
+    <string name="october">out</string>
+    <string name="november">nov</string>
+    <string name="december">dez</string>
+
     <string name="hello_blank_fragment">Olá fragment em branco</string>
     <string name="login">Entrar</string>
-    <string name="home">Início</string>
     <string name="movies">Filmes</string>
-    <string name="search">Busca</string>
+    <string name="favorites">Favoritos</string>
     <string name="more">Mais</string>
-    <string name="top_peoples">Pessoas Populares</string>
     <string name="theme">Tema</string>
     <string name="theme_system_subtitle">Automático</string>
     <string name="simplify_menu_icons_title">Itens de menú de navegação</string>
@@ -36,4 +48,7 @@
     <string name="show_only_selected_menu_icons_description_list">Mostrar textos apenas na opção de menu selecionada</string>
     <string name="never_show_menu_icons_description">Nunca mostrar os textos de ícones de navegação</string>
     <string name="the_most_popular">Mais populares</string>
+    <string name="trending_tv">Tendências de TV</string>
+    <string name="movie_date">%s de %s de %s</string>
+    <string name="cant_load">Desculpe, nós não conseguimos carregar essa página. Por favor verifique sua conexão com a internet.</string>
 </resources>

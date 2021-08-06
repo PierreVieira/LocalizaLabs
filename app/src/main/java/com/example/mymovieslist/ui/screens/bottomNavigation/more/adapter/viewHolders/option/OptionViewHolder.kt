@@ -6,8 +6,8 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.example.mymovieslist.R
-import com.example.mymovieslist.data.model.clickable.ClickableMoreItem
-import com.example.mymovieslist.data.model.MoreItem
+import com.example.mymovieslist.data.model.screens.more.clickable.ClickableMoreItem
+import com.example.mymovieslist.data.model.screens.more.MoreItem
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.base.MoreBaseViewHolder
 
 abstract class OptionViewHolder(itemView: View, context: Context) :

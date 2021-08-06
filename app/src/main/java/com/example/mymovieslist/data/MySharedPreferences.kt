@@ -60,7 +60,7 @@ object MySharedPreferences {
     fun getFirstFragment() = safeGetPreference {
         Mapper.mapFragmentNavigationNameToFragmentNavigationType(
             it.getString(
-                FRAGMENT_NAVIGATION_KEY, FragmentNavigationType.HOME.name
+                FRAGMENT_NAVIGATION_KEY, FragmentNavigationType.MOVIES.name
             )
         )
     } as FragmentNavigationType

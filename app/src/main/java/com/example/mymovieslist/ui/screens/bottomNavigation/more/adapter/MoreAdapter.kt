@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mymovieslist.R
-import com.example.mymovieslist.data.model.MoreItem
-import com.example.mymovieslist.data.model.clickable.settings.MenuIconsItem
+import com.example.mymovieslist.data.model.screens.more.MoreItem
+import com.example.mymovieslist.data.model.screens.more.clickable.settings.MenuIconsItem
 import com.example.mymovieslist.enums.MenuOptionType
 import com.example.mymovieslist.enums.MoreItemType
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.SettingsListener
