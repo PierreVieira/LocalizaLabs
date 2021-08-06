@@ -39,7 +39,7 @@ class ListMoviesAdapter(
         private val image: AppCompatImageView = itemView.findViewById(R.id.movie_image)
         private val score: TextView = itemView.findViewById(R.id.score)
         private val title: TextView = itemView.findViewById(R.id.title)
-        private val date: TextView = itemView.findViewById(R.id.title)
+        private val date: TextView = itemView.findViewById(R.id.date)
 
         fun bindMovie(movieItem: MovieItem) {
             title.text = movieItem.title
