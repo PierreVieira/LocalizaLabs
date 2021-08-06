@@ -1,4 +1,4 @@
-package com.example.mymovieslist.ui.screens.bottomNavigation
+package com.example.mymovieslist.utils
 
 import android.content.Context
 import android.view.View

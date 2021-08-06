@@ -43,5 +43,4 @@ object Mapper {
             MenuOptionType.SHOW_ONLY_SELECTED -> NavigationBarView.LABEL_VISIBILITY_SELECTED
             else -> NavigationBarView.LABEL_VISIBILITY_UNLABELED
         }
-
 }

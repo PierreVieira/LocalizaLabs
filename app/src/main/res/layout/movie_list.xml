@@ -5,25 +5,53 @@
     android:id="@+id/the_most_popular_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="24dp"
+    android:layout_marginTop="16dp"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
         android:textSize="@dimen/section_title_size"
         tools:text="@string/the_most_popular" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:itemCount="5"
-        tools:listitem="@layout/movie_item" />
+        android:layout_height="wrap_content">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <include layout="@layout/movie_item_shimmer" />
+
+                <include layout="@layout/movie_item_shimmer" />
+
+                <include layout="@layout/movie_item_shimmer" />
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="5"
+            tools:listitem="@layout/movie_item" />
+    </FrameLayout>
+
 
 </LinearLayout>

@@ -14,6 +14,18 @@
         <action
             android:id="@+id/action_to_movies_favorites"
             app:destination="@id/favorites_screen"/>
+        <action
+            android:id="@+id/action_to_movie_details"
+            app:destination="@id/movie_details_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/movie_details_fragment"
+        android:name="com.example.mymovieslist.ui.screens.details.MovieDetailsFragment"
+        android:label="FilmDetailsFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
 
     <fragment

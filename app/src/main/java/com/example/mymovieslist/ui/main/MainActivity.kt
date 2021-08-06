@@ -7,6 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraph
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.mymovieslist.R
 import com.example.mymovieslist.data.MySharedPreferences
 import com.example.mymovieslist.databinding.ActivityMainBinding
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         setupAppPreferences()
     }
 
+
     private fun setupAppPreferences() {
         MySharedPreferences.initializeSharedPreferences(this)
         setupNavigation()
@@ -44,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 )
             )
             NavigationUI.setupWithNavController(binding.bottomNavigation, navController!!)
-            navGraph = navController!!.navInflater.inflate(R.navigation.nav_graph)
+            navGraph = navController!!.navInflater.inflate(R.navigation.navigation_graph)
             setStartNavigation()
         }
     }

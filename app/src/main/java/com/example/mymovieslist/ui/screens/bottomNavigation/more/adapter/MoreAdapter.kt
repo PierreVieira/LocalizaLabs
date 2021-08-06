@@ -12,7 +12,7 @@ import com.example.mymovieslist.data.model.screens.more.clickable.settings.MenuI
 import com.example.mymovieslist.enums.MenuOptionType
 import com.example.mymovieslist.enums.MoreItemType
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.SettingsListener
-import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.base.MoreBaseViewHolder
+import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.base.MoreViewHolder
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.option.SettingViewHolder
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.option.SocialViewHolder
 import com.example.mymovieslist.ui.screens.bottomNavigation.more.adapter.viewHolders.simpleText.MoreListSimpleTextViewHolder
@@ -21,8 +21,7 @@ class MoreAdapter(
     private val context: Context,
     private val listItems: List<MoreItem>,
     private val settingsListener: SettingsListener,
-) :
-    RecyclerView.Adapter<MoreBaseViewHolder>() {
+) : RecyclerView.Adapter<MoreViewHolder>() {
 
     enum class TypeItems {
         LOGIN,
@@ -42,7 +41,7 @@ class MoreAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoreBaseViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoreViewHolder {
         val itemView: View
         val inflater = LayoutInflater.from(parent.context)
         return when (TypeItems.getEnumFromPosition(viewType)) {
@@ -72,7 +71,7 @@ class MoreAdapter(
     private fun inflate(layoutInflater: LayoutInflater, @LayoutRes layout: Int, parent: ViewGroup) =
         layoutInflater.inflate(layout, parent, false)
 
-    override fun onBindViewHolder(holder: MoreBaseViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MoreViewHolder, position: Int) {
         val item = listItems[position]
         holder.bindItem(item)
     }

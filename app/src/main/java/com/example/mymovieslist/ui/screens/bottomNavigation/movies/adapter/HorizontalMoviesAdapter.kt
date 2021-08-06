@@ -10,14 +10,14 @@ import com.example.mymovieslist.R
 import com.example.mymovieslist.data.model.api.MovieItem
 import com.example.mymovieslist.data.model.screens.movies.HorizontalListItem
 import com.example.mymovieslist.enums.HomeItemType
-import com.example.mymovieslist.ui.screens.bottomNavigation.BaseViewHolder
+import com.example.mymovieslist.utils.BaseViewHolder
+import com.facebook.shimmer.ShimmerFrameLayout
 
 class HorizontalMoviesAdapter(
     private val listData: List<HorizontalListItem>,
     private val context: Context,
     private val getMoviesCallback: (homeItemType: HomeItemType, callback: (movies: List<MovieItem>) -> Unit) -> Unit
-) :
-    RecyclerView.Adapter<HorizontalMoviesAdapter.HorizontalListViewHolder>() {
+) : RecyclerView.Adapter<HorizontalMoviesAdapter.HorizontalListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = HorizontalListViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.movie_list, parent, false),
@@ -28,6 +28,8 @@ class HorizontalMoviesAdapter(
         val item = listData[position]
         holder.title.text = holder.getString(item.title)
         getMoviesCallback.invoke(item.homeItemType) { movies: List<MovieItem> ->
+            holder.shimmerLayout.visibility = View.GONE
+            holder.recyclerView.visibility = View.VISIBLE
             holder.recyclerView.adapter = ListMoviesAdapter(movies, context)
         }
     }
@@ -38,5 +40,6 @@ class HorizontalMoviesAdapter(
         BaseViewHolder(itemView, context) {
         val title: TextView = itemView.findViewById(R.id.title)
         val recyclerView: RecyclerView = itemView.findViewById(R.id.recycler_view)
+        val shimmerLayout: ShimmerFrameLayout = itemView.findViewById(R.id.shimmer)
     }
 }

@@ -2,17 +2,17 @@ package com.example.mymovieslist.data.model.api
 
 import com.google.gson.annotations.SerializedName
 
-data class MovieItem(
+data class MovieDetailsItemResponse(
     @SerializedName("id")
-    val id: Int?,
-    @SerializedName("title")
+    val id: Int,
+    @SerializedName("original_title")
     val title: String?,
+    @SerializedName("genres")
+    val genres: List<Genre>,
     @SerializedName("vote_average")
     val score: Float?,
-    @SerializedName("release_date")
-    val releaseDate: String?,
-    @SerializedName("poster_path")
-    val posterPath: String?,
+    @SerializedName("backdrop_path")
+    val image: String?,
     @SerializedName("overview")
     val synopsis: String?
 )
